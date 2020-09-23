@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
+       default-autowire="byName" default-lazy-init="true">
+
+    <!-- 框架相关懒加载 -->
+    <bean lazy-init="true" id="sysDatasourceService" class="org.soul.service.sys.SysDatasourceService" />
+    <bean lazy-init="true" id="smsInterfaceService" class="org.soul.service.smsinterface.SmsInterfaceService"/>
+
+    <!--&lt;!&ndash; 业务相关懒加载 &ndash;&gt;-->
+    <!--<bean lazy-init="true" id="auditLogService" class="so.wwb.lotterybox.service.manager.sys.AuditLogService"/>-->
+    <!--<bean lazy-init="true" id="messageService" class="so.wwb.lotterybox.service.common.MessageService" />-->
+    <!--<bean lazy-init="true" id="oauthTokenService" class="so.wwb.lotterybox.service.merchant.oauth.OauthTokenService" />-->
+    <bean lazy-init="true" id="sysUserExtendService" class="so.wwb.lotterybox.service.manager.user.SysUserExtendService"/>
+    <bean lazy-init="true" id="passportService" class="so.wwb.lotterybox.service.manager.user.PassportService"/>
+    <!--<bean lazy-init="true" id="oauthClientService" class="so.wwb.lotterybox.service.manager.oauth.OauthClientService"/>-->
+
+    <!--&lt;!&ndash; 业务相关即时加载 &ndash;&gt;-->
+    <bean id="sysSiteService" class="so.wwb.lotterybox.service.manager.sys.SysSiteService" />
+    <bean id="sysDomainService" class="so.wwb.lotterybox.service.manager.sys.SysDomainService"/>
+    <!--<bean id="sysExportService" class="so.wwb.lotterybox.service.manager.sys.SysExportService"/>-->
+
+    <!--<bean id="vSysSiteDomainService" class="so.wwb.lotterybox.service.manager.sys.VSysSiteDomainService"/>-->
+    <!--<bean id="vSysSiteUserService" class="so.wwb.lotterybox.service.manager.sys.VSysSiteUserService" />-->
+    <bean id="vSysDomainService" class="so.wwb.lotterybox.service.manager.sys.VSysDomainService"/>
+    <bean id="vSubAccountService" class="so.wwb.lotterybox.service.manager.user.VSubAccountService"/>
+
+    <!--<bean id="taskScheduleCrudServiceEx" class="so.wwb.lotterybox.service.manager.taskschedule.TaskScheduleCrudServiceEx" />-->
+    <!--<bean id="taskRunRecordService" class="so.wwb.lotterybox.service.manager.taskschedule.TaskRunRecordService"/>-->
+    <bean id="customSysParamService" class="so.wwb.lotterybox.service.manager.sys.CustomSysParamService"/>
+    <!--<bean id="ipDbService" class="so.wwb.lotterybox.service.manager.common.IpDbService"/>-->
+    <!--<bean id="siteConfineAreaService" class="so.wwb.lotterybox.service.manager.common.SiteConfineAreaService"/>-->
+    <!--<bean id="siteConfineIpService" class="so.wwb.lotterybox.service.manager.common.SiteConfineIpService"/>-->
+    <!--<bean id="siteI18nService" class="so.wwb.lotterybox.service.manager.common.SiteI18nService"/>-->
+    <!--<bean id="siteLanguageService" class="so.wwb.lotterybox.service.manager.common.SiteLanguageService"/>-->
+    <!--<bean id="siteOperateAreaService" class="so.wwb.lotterybox.service.manager.common.SiteOperateAreaService"/>-->
+    <!--<bean id="siteCurrencyService" class="so.wwb.lotterybox.service.manager.common.SiteCurrencyService"/>-->
+    <!--<bean id="myAccountService" class="so.wwb.lotterybox.service.manager.permission.MyAccountService"/>-->
+    <!--<bean id="playerRemarkService" class="so.wwb.lotterybox.service.manager.sys.RemarkService"/>-->
+    <!--<bean id="customSysAuditLogService" class="so.wwb.lotterybox.service.manager.sys.CustomSysAuditLogService"/>-->
+    <!--<bean id="vSiteUserAccountService" class="so.wwb.lotterybox.service.manager.sys.VSiteUserAccountService"/>-->
+
+    <!--<bean id="lotteryService" class="so.wwb.lotterybox.service.manager.lottery.LotteryService"/>-->
+    <!--<bean id="lotteryTypeService" class="so.wwb.lotterybox.service.manager.lottery.LotteryTypeService" />-->
+
+    <!--<bean id="lotteryResultService" class="so.wwb.lotterybox.service.manager.lottery.LotteryResultService" />-->
+    <!--<bean id="lotteryRuleService" class="so.wwb.lotterybox.service.merchant.lottery.LotteryRuleService"/>-->
+    <!--<bean id="lotteryResultLogService" class="so.wwb.lotterybox.service.merchant.lottery.LotteryResultLogService"/>-->
+    <!--<bean id="lotteryLhcZodiacService" class="so.wwb.lotterybox.service.manager.lottery.LotteryLhcZodiacService"/>-->
+    <!--<bean id="lotteryGatherConfService" class="so.wwb.lotterybox.service.manager.lottery.LotteryGatherConfService"/>-->
+    <!--<bean id="lotteryHandicapService" class="so.wwb.lotterybox.service.manager.lottery.LotteryHandicapService"/>-->
+
+    <!--<bean id="sysAnnouncementService" class="so.wwb.lotterybox.service.manager.message.SystemAnnouncementService"/>-->
+    <!--<bean id="SysAnnouncementI18nService" class="so.wwb.lotterybox.service.manager.message.SystemAnnouncementI18NService"/>-->
+    <!--<bean id="systemMessageService" class="so.wwb.lotterybox.service.manager.message.SystemMessageService"/>-->
+    <!--<bean id="systemMessageReceiveService" class="so.wwb.lotterybox.service.manager.message.SystemMessageReceiveService"/>-->
+
+    <!--<bean id="bankService" class="so.wwb.lotterybox.service.manager.pay.BankService"/>-->
+    <!--<bean id="bankExtendService" class="so.wwb.lotterybox.service.manager.pay.BankExtendService"/>-->
+    <!--<bean id="payApiProviderService" class="so.wwb.lotterybox.service.manager.pay.PayApiProviderService"/>-->
+    <!--<bean id="sysCurrencyService" class="so.wwb.lotterybox.service.manager.sys.SysCurrencyService"/>-->
+    <!--<bean id="currencyExchangeRateService" class="so.wwb.lotterybox.service.manager.sys.CurrencyExchangeRateService"/>-->
+
+    <!--<bean id="reportGameMerchantService" class="so.wwb.lotterybox.service.manager.report.ReportGameMerchantService"/>-->
+
+
+
+    <!--<bean id="vSysSiteManagerService" class="so.wwb.lotterybox.service.merchant.site.VSysSiteManageService"/>-->
+    <!--<bean id="siteMasterManageService" class="so.wwb.lotterybox.service.merchant.site.VSiteMasterManageService"/>-->
+    <!--<bean id="siteSysParamService" class="so.wwb.lotterybox.service.merchant.site.SiteSysParamService" />-->
+    <!--<bean id="userBankcardService" class="so.wwb.lotterybox.service.merchant.player.UserBankcardService" />-->
+    <!--<bean id="userAssetsService" class="so.wwb.lotterybox.service.merchant.user.UserAssetsService" />-->
+    <!--<bean id="vUserPlayerService" class="so.wwb.lotterybox.service.merchant.user.VUserPlayerService"/>-->
+    <!--<bean id="vPlayerOnlineService" class="so.wwb.lotterybox.service.merchant.user.VPlayerOnlineService"/>-->
+
+
+    <!--<bean id="userPlayerService" class="so.wwb.lotterybox.service.merchant.user.UserPlayerService" />-->
+    <!--<bean id="vTaskReminderService" class="so.wwb.lotterybox.service.merchant.task.VTaskReminderService"/>-->
+    <!--<bean id="vTeamMemberService" class="so.wwb.lotterybox.service.merchant.user.VTeamMemberService"/>-->
+    <!--<bean id="billChangeService" class="so.wwb.lotterybox.service.merchant.bill.BillChangeService" />-->
+    <!--<bean id="vBillChangeService" class="so.wwb.lotterybox.service.merchant.fund.VBillChangeService"/>-->
+
+    <!--<bean id="lotteryBetService" class="so.wwb.lotterybox.service.merchant.lottery.LotteryBetService"/>-->
+    <!--<bean id="lotteryBillService" class="so.wwb.lotterybox.service.merchant.lottery.LotteryBillService" />-->
+    <!--<bean id="lotteryBetOrderService" class="so.wwb.lotterybox.service.merchant.lottery.LotteryBetOrderService" />-->
+    <!--<bean id="lotteryOddSetService" class="so.wwb.lotterybox.service.merchant.lottery.LotteryOddSetService"/>-->
+    <!--<bean id="lotteryQuotaSetService" class="so.wwb.lotterybox.service.merchant.lottery.LotteryQuotaSetService"/>-->
+    <!--<bean id="lotteryHashRecordService" class="so.wwb.lotterybox.service.merchant.lottery.LotteryHashRecordService"/>-->
+    <!--<bean id="lotteryResultNumberService" class="so.wwb.lotterybox.service.merchant.lottery.LotteryResultNumberService"/>-->
+
+    <!--<bean id="contentMessageService" class="so.wwb.lotterybox.service.merchant.content.ContentMessageService"/>-->
+    <!--<bean id="contentMessageReceiveService" class="so.wwb.lotterybox.service.merchant.message.ContentMessageReceiveService"/>-->
+    <!--<bean id="userParamService" class="so.wwb.lotterybox.service.merchant.setting.UserParamService" />-->
+
+    <!--<bean id="playerRankService" class="so.wwb.lotterybox.service.merchant.operation.PlayerRankService"/>-->
+    <!--<bean id="payRankService" class="so.wwb.lotterybox.service.merchant.operation.PayRankService"/>-->
+    <!--<bean id="payAccountService" class="so.wwb.lotterybox.service.merchant.operation.PayAccountService"/>-->
+    <!--<bean id="vPayAccountService" class="so.wwb.lotterybox.service.merchant.operation.VPayAccountService"/>-->
+    <!--<bean id="payWarningService" class="so.wwb.lotterybox.service.merchant.operation.PayWarningService"/>-->
+    <!--<bean id="vPayRankService" class="so.wwb.lotterybox.service.merchant.operation.VPayRankService"/>-->
+    <!--<bean id="vPlayerRankStatisticsService" class="so.wwb.lotterybox.service.merchant.operation.VPlayerRankStatisticsService"/>-->
+    <!--<bean id="payAccountCurrencyService" class="so.wwb.lotterybox.service.merchant.operation.PayAccountCurrencyService"/>-->
+    <!--<bean id="bankSupportCurrencyService" class="so.wwb.lotterybox.service.merchant.operation.BankSupportCurrencyService"/>-->
+    <!--<bean id="payAccountCollectionService" class="so.wwb.lotterybox.service.merchant.operation.PayAccountCollectionService"/>-->
+
+    <!--<bean id="noticeTmplService" class="so.wwb.lotterybox.service.merchant.content.NoticeTmplService" />-->
+    <!--<bean id="noticeParamRelationService" class="so.wwb.lotterybox.service.merchant.content.NoticeParamRelationService" />-->
+    <!--<bean id="cttFloatPicItemService" class="so.wwb.lotterybox.service.merchant.content.CttFloatPicItemService" />-->
+    <!--<bean id="cttFloatPicService" class="so.wwb.lotterybox.service.merchant.content.CttFloatPicService" />-->
+
+    <!--<bean id="rakebackSetService" class="so.wwb.lotterybox.service.merchant.operation.RakebackSetService"/>-->
+    <!--<bean id="rakebackGradsService" class="so.wwb.lotterybox.service.merchant.operation.RakebackGradsService"/>-->
+    <!--<bean id="rakebackGradsApiService" class="so.wwb.lotterybox.service.merchant.operation.RakebackGradsApiService"/>-->
+    <!--<bean id="vRakebackSetService" class="so.wwb.lotterybox.service.merchant.operation.VRakebackSetService"/>-->
+    <!--<bean id="vBillRakebackService" class="so.wwb.lotterybox.service.merchant.fund.VBillRakebackService"/>-->
+    <!--<bean id="billRakebackService" class="so.wwb.lotterybox.service.merchant.fund.BillRakebackService"/>-->
+
+    <!--<bean id="billDepositAuditService" class="so.wwb.lotterybox.service.merchant.bill.BillAuditService" />-->
+    <!--<bean id="billDepositService" class="so.wwb.lotterybox.service.merchant.bill.BillDepositService" />-->
+    <!--<bean id="billWithdrawalService" class="so.wwb.lotterybox.service.merchant.bill.BillWithdrawalService" />-->
+    <!--<bean id="userFeedbackService" class="so.wwb.lotterybox.service.merchant.user.UserFeedbackService" />-->
+
+    <!--<bean id="billDividenService" class="so.wwb.lotterybox.service.merchant.fund.BillDividenService" />-->
+    <!--<bean id="billDividenProjectService" class="so.wwb.lotterybox.service.merchant.operation.BillDividenProjectService" />-->
+    <!--<bean id="billDividenGradeService" class="so.wwb.lotterybox.service.merchant.bill.BillDividenGradeService" />-->
+    <!--<bean id="billDividenRatioService" class="so.wwb.lotterybox.service.merchant.bill.BillDividenRatioService" />-->
+
+    <!--<bean id="billSalaryService" class="so.wwb.lotterybox.service.merchant.fund.BillSalaryService"/>-->
+    <!--<bean id="billSalaryRatioService" class="so.wwb.lotterybox.service.merchant.bill.BillSalaryRatioService"/>-->
+    <!--<bean id="billSalaryProjectService" class="so.wwb.lotterybox.service.merchant.operation.BillSalaryProjectService"/>-->
+    <!--<bean id="billSalaryGradeService" class="so.wwb.lotterybox.service.merchant.bill.BillSalaryGradeService"/>-->
+
+    <!--<bean id="reportGameService" class="so.wwb.lotterybox.service.merchant.report.ReportGameService"/>-->
+    <!--<bean id="reportOperateService" class="so.wwb.lotterybox.service.merchant.report.ReportOperateService"/>-->
+    <!--<bean id="reportBillService" class="so.wwb.lotterybox.service.merchant.report.ReportBillService"/>-->
+    <!--<bean id="reportPlayerService" class="so.wwb.lotterybox.service.merchant.report.ReportPlayerService"/>-->
+
+    <!--<bean id="operationActivityService" class="so.wwb.lotterybox.service.merchant.operation.OperationActivityService"/>-->
+    <!--<bean id="contentBulletinService" class="so.wwb.lotterybox.service.merchant.content.ContentBulletinService"/>-->
+    <!--<bean id="contentDocumentService" class="so.wwb.lotterybox.service.merchant.content.ContentDocumentService"/>-->
+
+    <!--<bean id="contentCarouselService" class="so.wwb.lotterybox.service.merchant.content.ContentCarouselService"/>-->
+
+    <!--<bean id="vUserPlayerImportService" class="so.wwb.lotterybox.service.merchant.setting.VUserPlayerImportService"/>-->
+
+    <!--<bean id="userPlayerTransferService" class="so.wwb.lotterybox.service.merchant.setting.UserPlayerTransferService"/>-->
+
+    <!--<bean id="userPlayerImportService" class="so.wwb.lotterybox.service.merchant.setting.UserPlayerImportService"/>-->
+
+    <!--<bean id="lotteryErrorLogService" class="so.wwb.lotterybox.service.manager.lottery.LotteryErrorLogService"/>-->
+
+    <!--<bean id="payLogService" class="so.wwb.lotterybox.service.manager.common.PayLogService"/>-->
+
+    <!--<bean id="siteAppUpdateService" class="so.wwb.lotterybox.service.manager.message.siteAppUpdateService"/>-->
+
+    <!--<bean id="appVersionLogService" class="so.wwb.lotterybox.service.manager.message.AppVersionLogService"/>-->
+
+    <!--<bean id="appErrorLogService" class="so.wwb.lotterybox.service.merchant.message.AppErrorLogService"/>-->
+
+    <!--&lt;!&ndash; 玩家盈利排行榜表服务 &ndash;&gt;-->
+    <!--<bean id="playerProfitService" class="so.wwb.lotterybox.service.merchant.content.PlayerProfitService"/>-->
+    <!--&lt;!&ndash;玩家vip服务&ndash;&gt;-->
+    <!--<bean id="playerVipSetService" class="so.wwb.lotterybox.service.merchant.user.PlayerVipSetService"/>-->
+    <!--&lt;!&ndash;用户备注服务&ndash;&gt;-->
+    <!--<bean id="userRemarkService" class="so.wwb.lotterybox.service.merchant.user.UserRemarkService"/>-->
+    <!--&lt;!&ndash; 站点分组服务 &ndash;&gt;-->
+    <!--<bean id="sysSiteGroupService" class="so.wwb.lotterybox.service.manager.sys.SysSiteGroupService"/>-->
+
+    <!--<bean id="vPlayerTeamService" class="so.wwb.lotterybox.service.merchant.user.VPlayerTeamService"/>-->
+
+    <!--<bean id="kgGatherHandler" class="so.wwb.lotterybox.gather.KgGatherHandler" autowire-candidate="false"/>-->
+
+    <!--<bean id="gatherHandlers" class="so.wwb.lotterybox.gather.handle.GatherHandlers">-->
+        <!--<property name="handlers">-->
+            <!--<list>-->
+                <!--<ref bean="kgGatherHandler"/>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+</beans>

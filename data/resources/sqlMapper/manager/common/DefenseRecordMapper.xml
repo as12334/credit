@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="so.wwb.lotterybox.data.manager.common.DefenseRecordMapper">
+
+    <resultMap id="TABLE:defense_record" type="so.wwb.lotterybox.model.merchant.setting.po.DefenseRecord">
+        <id column="id" property="id"/>
+        <result column="client_id" property="clientId"/>
+        <result column="action_code" property="actionCode"/>
+        <result column="dispose_code" property="disposeCode"/>
+        <result column="dispose_end_time" property="disposeEndTime"/>
+        <result column="operate_ip" property="operateIp"/>
+        <result column="operate_start_time" property="operateStartTime"/>
+        <result column="operate_end_time" property="operateEndTime"/>
+        <result column="success_times" property="successTimes"/>
+        <result column="error_times" property="errorTimes"/>
+        <result column="description" property="description"/>
+        <result column="sys_user_id" property="sysUserId"/>
+        <result column="reset_columns" property="resetColumns"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+    <update id="incrementSuccess" parameterType="so.wwb.lotterybox.model.merchant.setting.po.DefenseRecord">
+        UPDATE defense_record set success_times = success_times + 1,operate_end_time = now(),dispose_code = #{disposeCode},dispose_end_time = #{disposeEndTime},reset_columns = #{resetColumns},description = #{description}
+        where id = #{id};
+    </update>
+
+    <update id="incrementError" parameterType="so.wwb.lotterybox.model.merchant.setting.po.DefenseRecord">
+        UPDATE defense_record set error_times = error_times + 1,operate_end_time = now(),dispose_code = #{disposeCode},dispose_end_time = #{disposeEndTime},reset_columns = #{resetColumns},description = #{description}
+        where id = #{id};
+    </update>
+
+    <!--同个IP操作用户个数-->
+    <select id="ipOpUserCount" parameterType="so.wwb.lotterybox.model.merchant.setting.po.DefenseRecord" resultType="int">
+        SELECT count(1) from defense_record WHERE operate_ip = #{operateIp} and operate_end_time >= #{operateEndTime};
+    </select>
+
+    <!--重置,注意控制并发请求-->
+    <update id="reset" parameterType="so.wwb.lotterybox.model.merchant.setting.po.DefenseRecord">
+        UPDATE defense_record set dispose_code = #{disposeCode},dispose_end_time = #{disposeEndTime},operate_start_time = #{operateStartTime},
+        operate_end_time = #{operateEndTime}, success_times = #{successTimes},error_times = #{errorTimes},description = null,reset_columns = #{resetColumns}
+        where id = #{id} and dispose_end_time &lt;= now();
+    </update>
+
+    <!--IP批量限制-->
+    <update id="disposeByIp" parameterType="so.wwb.lotterybox.model.merchant.setting.po.DefenseRecord">
+        UPDATE defense_record set dispose_code = #{disposeCode},dispose_end_time = #{disposeEndTime},description = #{description}
+        where operate_ip = #{operateIp};
+    </update>
+
+    <!--<update id="ipConfine">-->
+
+    <!--</update>-->
+    <!--//endregion your codes 1-->
+
+</mapper>

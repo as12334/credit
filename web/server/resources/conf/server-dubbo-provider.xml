@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://code.alibabatech.com/schema/dubbo	http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--//region your codes 1-->
+    <!-- 功能防御 -->
+
+
+    <dubbo:service ref="sysDatasourceService" interface="org.soul.iservice.sys.ISysDatasourceService" registry="zookeeperService"/>
+    <!--通行证-->
+    <dubbo:service ref="passportService" interface="org.soul.iservice.passport.IPassportService" registry="zookeeperService"/>
+
+    <dubbo:service ref="sysParamService" interface="org.soul.iservice.sys.ISysParamService" registry="zookeeperService"/>
+
+    <dubbo:service ref="customSysParamService" interface="so.wwb.lotterybox.iservice.manager.sys.ICustomSysParamService" registry="zookeeperService"/>
+
+    <!--<dubbo:service ref="siteSysParamService" interface="so.wwb.lotterybox.iservice.merchant.site.ISiteSysParamService" registry="zookeeperService"/>-->
+
+    <!-- 数据库校验服务 -->
+    <dubbo:service ref="dbValidService" interface="org.soul.iservice.test.IDbValidService"/>
+
+    <!--站长服务-->
+    <dubbo:service ref="sysSiteService" interface="so.wwb.lotterybox.iservice.manager.sys.ISysSiteService" registry="zookeeperService"/>
+
+
+    <!--域名服务-->
+    <dubbo:service ref="sysDomainService" interface="so.wwb.lotterybox.iservice.manager.sys.ISysDomainService" registry="zookeeperService"/>
+
+    <dubbo:service ref="sysUserExtendService" interface="so.wwb.lotterybox.iservice.manager.user.ISysUserExtendService"/>
+
+    <!-- 子账户视图dubbo服务 -->
+    <dubbo:service ref="vSubAccountService" interface="so.wwb.lotterybox.iservice.manager.user.IVSubAccountService" registry="zookeeperService"/>
+
+    <!-- 域名视图服务dubbo服务 -->
+    <dubbo:service ref="vSysDomainService" interface="so.wwb.lotterybox.iservice.manager.sys.IVSysDomainService" registry="zookeeperService"/>
+
+    <!-- 站点视图dubbo服务 -->
+    <!--<dubbo:service ref="vSysSiteManagerService" interface="so.wwb.lotterybox.iservice.manager.sys.IVSysSiteManageService" registry="zookeeperService"/>-->
+
+    <!-- 站点视图dubbo服务 -->
+    <!--<dubbo:service ref="siteMasterManageService" interface="so.wwb.lotterybox.iservice.manager.sys.IVSiteMasterManageService" registry="zookeeperService"/>-->
+
+
+    <!-- 系统审核日志dubbo服务 -->
+    <!--<dubbo:service ref="auditLogService" interface="so.wwb.lotterybox.iservice.manager.common.IAuditLogService" registry="zookeeperService"/>-->
+
+    <!-- 账户视图服务dubbo服务 -->
+    <!--<dubbo:service ref="myAccountService" interface="so.wwb.lotterybox.iservice.manager.permission.IMyAccountService" registry="zookeeperService"/>-->
+
+    <!-- Ip限制访问dubbo服务 -->
+    <!--备注-->
+    <!--<dubbo:service ref="playerRemarkService" interface="so.wwb.lotterybox.iservice.merchant.site.IRemarkService" registry="zookeeperService"/>-->
+    <!-- 包网方案视图dubbo服务 -->
+    <!--<dubbo:service ref="customSysAuditLogService" interface="so.wwb.lotterybox.iservice.manager.sys.ICustomSysAuditLogService" registry="zookeeperService"/>-->
+    <!--&lt;!&ndash; 站点管理 商户下面的子账户dubbo服务 &ndash;&gt;-->
+    <!--&lt;!&ndash;<dubbo:service ref="vSiteUserAccountService" interface="so.wwb.lotterybox.iservice.manager.sys.IVSiteUserAccountService" registry="zookeeperService"/>&ndash;&gt;-->
+
+    <!--<dubbo:service ref="messageService" interface="so.wwb.lotterybox.iservice.common.IMessageService" registry="zookeeperService"/>-->
+
+    <!--&lt;!&ndash; 开奖结果主表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryResultService" interface="so.wwb.lotterybox.iservice.manager.lottery.ILotteryResultService" registry="zookeeperService"/>-->
+
+    <!--&lt;!&ndash; 彩种表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryService" interface="so.wwb.lotterybox.iservice.manager.lottery.ILotteryService" registry="zookeeperService"/>-->
+
+
+    <!--&lt;!&ndash; 投注记录表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryBetOrderService" interface="so.wwb.lotterybox.iservice.merchant.lottery.ILotteryBetOrderService" registry="zookeeperService"/>-->
+
+    <!--&lt;!&ndash; 新彩票资金记录表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryBillService" interface="so.wwb.lotterybox.iservice.merchant.lottery.ILotteryBillService" registry="zookeeperService"/>-->
+
+    <!--&lt;!&ndash; 限额设置dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryQuotaSetService" interface="so.wwb.lotterybox.iservice.merchant.lottery.ILotteryQuotaSetService" registry="zookeeperService"/>-->
+
+    <!--&lt;!&ndash; 彩种盘口dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryHandicapService" interface="so.wwb.lotterybox.iservice.manager.lottery.ILotteryHandicapService" registry="zookeeperService"/>-->
+
+    <!--&lt;!&ndash; 六合彩生肖表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryLhcZodiacService" interface="so.wwb.lotterybox.iservice.manager.lottery.ILotteryLhcZodiacService" registry="zookeeperService"/>-->
+
+    <!--&lt;!&ndash; 彩票杀率设置dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryRuleService" interface="so.wwb.lotterybox.iservice.merchant.lottery.ILotteryRuleService" registry="zookeeperService"/>-->
+
+    <!-- 自主彩票开号记录dubbo服务 -->
+    <!--<dubbo:service ref="lotteryResultLogService" interface="so.wwb.lotterybox.iservice.merchant.lottery.ILotteryResultLogService" registry="zookeeperService"/>-->
+
+    <!--&lt;!&ndash; 彩票采集接口配置表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryGatherConfService" interface="so.wwb.lotterybox.iservice.manager.lottery.ILotteryGatherConfService" registry="zookeeperService"/>-->
+
+    <!--&lt;!&ndash;彩种类型 &ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryTypeService" interface="so.wwb.lotterybox.iservice.manager.lottery.ILotteryTypeService" registry="zookeeperService"/>-->
+
+    <!--消息/boss->站点（新）-->
+    <!--<dubbo:service ref="systemMessageService" interface="so.wwb.lotterybox.iservice.manager.message.ISystemMessageService" registry="zookeeperService"/>-->
+    <!--<dubbo:service ref="systemMessageReceiveService" interface="so.wwb.lotterybox.iservice.manager.message.ISystemMessageReceiveService" registry="zookeeperService"/>-->
+    <!--&lt;!&ndash;消息/站点->玩家&ndash;&gt;-->
+    <!--<dubbo:service ref="contentMessageService" interface="so.wwb.lotterybox.iservice.merchant.content.IContentMessageService" registry="zookeeperService"/>-->
+    <!--<dubbo:service ref="contentMessageReceiveService" interface="so.wwb.lotterybox.iservice.merchant.message.IContentMessageReceiveService" registry="zookeeperService"/>-->
+
+
+    <!--&lt;!&ndash;平台公告 2018年03月23日09:34:20&ndash;&gt;-->
+    <!--<dubbo:service ref="sysAnnouncementService" interface="so.wwb.lotterybox.iservice.manager.message.ISystemAnnouncementService" registry="zookeeperService"/>-->
+    <!--<dubbo:service ref="SysAnnouncementI18nService" interface="so.wwb.lotterybox.iservice.manager.message.ISystemAnnouncementI18nService" registry="zookeeperService"/>-->
+
+
+
+    <!--任务-->
+    <!--<dubbo:service ref="taskScheduleCrudServiceEx" interface="so.wwb.lotterybox.iservice.manager.taskschedule.ITaskScheduleCrudServiceEx" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="taskRunRecordService" interface="so.wwb.lotterybox.iservice.manager.taskschedule.ITaskRunRecordService" registry="zookeeperService"/>-->
+
+    <!--站点域名-->
+    <!--<dubbo:service ref="vSysSiteDomainService" interface="so.wwb.lotterybox.iservice.manager.sys.IVSysSiteDomainService" registry="zookeeperService"/>-->
+
+    <!--&lt;!&ndash;账号权限&ndash;&gt;-->
+    <!--<dubbo:service ref="sysRoleService" interface="org.soul.iservice.security.privilege.ISysRoleService"/>-->
+
+    <!--支付账号-->
+    <!--<dubbo:service ref="payAccountCollectionService" interface="so.wwb.lotterybox.iservice.merchant.operation.IPayAccountCollectionService" registry="zookeeperService"/>-->
+
+    <!--&lt;!&ndash;玩家银行卡账户&ndash;&gt;-->
+    <!--<dubbo:service ref="userBankcardService" interface="so.wwb.lotterybox.iservice.merchant.player.IUserBankcardService" registry="zookeeperService"/>-->
+
+    <!--银行-->
+    <!--<dubbo:service ref="bankService" interface="so.wwb.lotterybox.iservice.manager.pay.IBankService" registry="zookeeperService"/>-->
+
+    <!--支付API-->
+    <!--<dubbo:service ref="payApiProviderService" interface="so.wwb.lotterybox.iservice.merchant.operation.IPayApiProviderService" registry="zookeeperService"/>-->
+    <!--<dubbo:service ref="oauthClientService" interface="so.wwb.lotterybox.iservice.manager.oauth.IOauthClientService" registry="zookeeperService" />-->
+    <!--<dubbo:service ref="oauthTokenService" interface="so.wwb.lotterybox.iservice.merchant.oauth.IOauthTokenService" registry="zookeeperService" />-->
+
+    <!--&lt;!&ndash;信息模板&ndash;&gt;-->
+    <!--<dubbo:service ref="noticeTmplService" interface="so.wwb.lotterybox.iservice.merchant.content.INoticeTmplService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="noticeParamRelationService" interface="so.wwb.lotterybox.iservice.merchant.content.INoticeParamRelationService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="playerRankService" interface="so.wwb.lotterybox.iservice.merchant.operation.IPlayerRankService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="payRankService" interface="so.wwb.lotterybox.iservice.merchant.operation.IPayRankService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="payAccountService" interface="so.wwb.lotterybox.iservice.merchant.operation.IPayAccountService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="vPayAccountService" interface="so.wwb.lotterybox.iservice.merchant.operation.IVPayAccountService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="payWarningService" interface="so.wwb.lotterybox.iservice.merchant.operation.IPayWarningService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="vPayRankService" interface="so.wwb.lotterybox.iservice.merchant.operation.IVPayRankService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="bankExtendService" interface="so.wwb.lotterybox.iservice.manager.pay.IBankExtendService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="vPlayerRankStatisticsService" interface="so.wwb.lotterybox.iservice.merchant.operation.IVPlayerRankStatisticsService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="payAccountCurrencyService" interface="so.wwb.lotterybox.iservice.merchant.operation.IPayAccountCurrencyService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="bankSupportCurrencyService" interface="so.wwb.lotterybox.iservice.merchant.operation.IBankSupportCurrencyService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service  ref="onlinePayService" interface="org.soul.iservice.pay.IOnlinePayService" registry="zookeeperService"/>-->
+
+    <!-- 通知模块对外开放的服务 -->
+    <!--<dubbo:service ref="noticeService" interface="org.soul.iservice.msg.notice.INoticeService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="cttFloatPicItemService" interface="so.wwb.lotterybox.iservice.merchant.content.ICttFloatPicItemService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="cttFloatPicService" interface="so.wwb.lotterybox.iservice.merchant.content.ICttFloatPicService" registry="zookeeperService"/>-->
+
+    <!--<dubbo:service ref="userParamService" interface="so.wwb.lotterybox.iservice.merchant.setting.IUserParamService" registry="zookeeperService"/>-->
+
+    <!--货币汇率-->
+
+    <!--<dubbo:service ref="userPlayerService" interface="so.wwb.lotterybox.iservice.merchant.user.IUserPlayerService" />-->
+
+    <!--&lt;!&ndash; 返水设置表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="rakebackSetService" interface="so.wwb.lotterybox.iservice.merchant.operation.IRakebackSetService"/>-->
+
+    <!--&lt;!&ndash; 返水设置梯度表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="rakebackGradsService" interface="so.wwb.lotterybox.iservice.merchant.operation.IRakebackGradsService"/>-->
+
+    <!--&lt;!&ndash; 返水设置梯度API比例表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="rakebackGradsApiService" interface="so.wwb.lotterybox.iservice.merchant.operation.IRakebackGradsApiService"/>-->
+
+    <!--<dubbo:service ref="vRakebackSetService" interface="so.wwb.lotterybox.iservice.merchant.operation.IVRakebackSetService"/>-->
+
+    <!--&lt;!&ndash; 账变表服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="billChangeService" interface="so.wwb.lotterybox.iservice.merchant.bill.IBillChangeService"/>-->
+    <!--&lt;!&ndash; 存款稽核表服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="billDepositAuditService" interface="so.wwb.lotterybox.iservice.merchant.bill.IBillAuditService"/>-->
+    <!--&lt;!&ndash; 存款表服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="billDepositService" interface="so.wwb.lotterybox.iservice.merchant.bill.IBillDepositService"/>-->
+    <!--&lt;!&ndash; 取款表服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="billWithdrawalService" interface="so.wwb.lotterybox.iservice.merchant.bill.IBillWithdrawalService"/>-->
+    <!--&lt;!&ndash; 钱包表服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="userAssetsService" interface="so.wwb.lotterybox.iservice.merchant.user.IUserAssetsService"/>-->
+
+    <!--<dubbo:service ref="billRakebackService" interface="so.wwb.lotterybox.iservice.merchant.bill.IBillRakebackService"/>-->
+
+    <!--<dubbo:service ref="vBillRakebackService" interface="so.wwb.lotterybox.iservice.merchant.fund.IVBillRakebackService"/>-->
+    <!--&lt;!&ndash;分红dubbo服务&ndash;&gt;-->
+    <!--<dubbo:service ref="billDividenService" interface="so.wwb.lotterybox.iservice.merchant.fund.IBillDividenService"/>-->
+    <!--<dubbo:service ref="billDividenProjectService" interface="so.wwb.lotterybox.iservice.merchant.operation.IBillDividenProjectService"/>-->
+
+    <!--<dubbo:service ref="userFeedbackService" interface="so.wwb.lotterybox.iservice.merchant.user.IUserFeedbackService" />-->
+
+    <!--<dubbo:service ref="billDividenGradeService" interface="so.wwb.lotterybox.iservice.merchant.bill.IBillDividenGradeService"/>-->
+    <!--<dubbo:service ref="billDividenRatioService" interface="so.wwb.lotterybox.iservice.merchant.bill.IBillDividenRatioService"/>-->
+
+    <!--&lt;!&ndash; 日工资dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="billSalaryService" interface="so.wwb.lotterybox.iservice.merchant.fund.IBillSalaryService" registry="zookeeperService"/>-->
+    <!--<dubbo:service ref="billSalaryRatioService" interface="so.wwb.lotterybox.iservice.merchant.bill.IBillSalaryRatioService" registry="zookeeperService"/>-->
+    <!--<dubbo:service ref="billSalaryProjectService" interface="so.wwb.lotterybox.iservice.merchant.operation.IBillSalaryProjectService" registry="zookeeperService"/>-->
+    <!--<dubbo:service ref="billSalaryGradeService" interface="so.wwb.lotterybox.iservice.merchant.bill.IBillSalaryGradeService" registry="zookeeperService"/>-->
+    <!--&lt;!&ndash; 玩家账户管理视图dubbo服务&ndash;&gt;-->
+    <!--<dubbo:service ref="vUserPlayerService" interface="so.wwb.lotterybox.iservice.merchant.user.IVUserPlayerService" registry="zookeeperService"/>-->
+    <!--&lt;!&ndash; 玩家在線統計視圖&ndash;&gt;-->
+    <!--<dubbo:service ref="vPlayerOnlineService" interface="so.wwb.lotterybox.iservice.merchant.user.IVPlayerOnlineService" registry="zookeeperService"/>-->
+    <!--&lt;!&ndash; 任务提醒 &ndash;&gt;-->
+    <!--<dubbo:service ref="vTaskReminderService" interface="so.wwb.lotterybox.iservice.merchant.task.IVTaskReminderService"/>-->
+    <!--&lt;!&ndash; 站点开奖结果表dubbo服务&ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryResultNumberService" interface="so.wwb.lotterybox.iservice.merchant.lottery.ILotteryResultNumberService" registry="zookeeperService"/>-->
+
+    <!--&lt;!&ndash; 彩票投注业务接口 &ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryBetService" interface="so.wwb.lotterybox.iservice.merchant.lottery.ILotteryBetService"/>-->
+    <!--&lt;!&ndash; 站点彩票赔率设置dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="lotteryOddSetService" interface="so.wwb.lotterybox.iservice.merchant.lottery.ILotteryOddSetService"/>-->
+
+    <!--&lt;!&ndash; 资金记录视图&ndash;&gt;-->
+    <!--<dubbo:service ref="vBillChangeService" interface="so.wwb.lotterybox.iservice.merchant.fund.IVBillChangeService"/>-->
+
+    <!--<dubbo:service ref="reportGameMerchantService" interface="so.wwb.lotterybox.iservice.manager.report.IReportGameMerchantService"/>-->
+
+    <!--<dubbo:service ref="reportGameService" interface="so.wwb.lotterybox.iservice.merchant.report.IReportGameService"/>-->
+
+    <!--<dubbo:service ref="reportPlayerService" interface="so.wwb.lotterybox.iservice.merchant.report.IReportPlayerService"/>-->
+
+    <!--<dubbo:service ref="reportOperateService" interface="so.wwb.lotterybox.iservice.merchant.report.IReportOperateService"/>-->
+
+    <!--<dubbo:service ref="reportBillService" interface="so.wwb.lotterybox.iservice.merchant.report.IReportBillService"/>-->
+
+    <!--<dubbo:service ref="vTeamMemberService" interface="so.wwb.lotterybox.iservice.merchant.user.IVTeamMemberService"/>-->
+
+    <!--<dubbo:service ref="vSysSiteUserService" interface="so.wwb.lotterybox.iservice.manager.sys.IVSysSiteUserService"/>-->
+
+    <!-- 优惠活动dubbo服务 -->
+    <!--<dubbo:service ref="operationActivityService" interface="so.wwb.lotterybox.iservice.merchant.operation.IOperationActivityService" />-->
+
+    <!--<dubbo:service ref="sysExportService" interface="so.wwb.lotterybox.iservice.manager.sys.ISysExportService" />-->
+
+        <!--&lt;!&ndash; 站点公告表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="contentBulletinService" interface="so.wwb.lotterybox.iservice.merchant.content.IContentBulletinService"/>-->
+
+    <!--&lt;!&ndash; 文案信息表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="contentDocumentService" interface="so.wwb.lotterybox.iservice.merchant.content.IContentDocumentService"/>-->
+    <!--&lt;!&ndash; 玩家盈利排行榜表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="playerProfitService" interface="so.wwb.lotterybox.iservice.merchant.content.IPlayerProfitService"/>-->
+    <!--&lt;!&ndash; 轮播广告dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="contentCarouselService" interface="so.wwb.lotterybox.iservice.merchant.content.IContentCarouselService"/>-->
+    <!--&lt;!&ndash; 应用更新表dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="appUpdateService" interface="so.wwb.lotterybox.iservice.manager.sys.IAppUpdateService"/>-->
+
+    <!--<dubbo:service ref="vUserPlayerImportService" interface="so.wwb.lotterybox.iservice.merchant.setting.IVUserPlayerImportService"/>-->
+
+    <!--<dubbo:service ref="userPlayerTransferService" interface="so.wwb.lotterybox.iservice.merchant.setting.IUserPlayerTransferService"/>-->
+
+    <!--<dubbo:service ref="userPlayerImportService" interface="so.wwb.lotterybox.iservice.merchant.setting.IUserPlayerImportService"/>-->
+
+    <!--<dubbo:service ref="lotteryErrorLogService" interface="so.wwb.lotterybox.iservice.manager.lottery.ILotteryErrorLogService"/>-->
+    <!--&lt;!&ndash; app错误日志dubbo服务 &ndash;&gt;-->
+    <!--<dubbo:service ref="appLogService" interface="so.wwb.lotterybox.iservice.merchant.setting.IAppLogService"/>-->
+
+    <!--<dubbo:service ref="siteAppUpdateService" interface="so.wwb.lotterybox.iservice.manager.message.ISiteAppUpdateService"/>-->
+
+    <!--<dubbo:service  ref="appVersionLogService" interface="so.wwb.lotterybox.iservice.manager.message.IAppVersionLogService"/>-->
+
+    <!--<dubbo:service ref="appErrorLogService" interface="so.wwb.lotterybox.iservice.merchant.message.IAppErrorLogService"/>-->
+
+    <!--<dubbo:service  ref="importQjService" interface="so.wwb.lotterybox.iservice.merchant.importqj.IImportQjService"/>-->
+    <!--<dubbo:service ref="importYiboService" interface="so.wwb.lotterybox.iservice.merchant.change.IImportYiboService"/>-->
+    <!--<dubbo:service ref="importLixinService" interface="so.wwb.lotterybox.iservice.merchant.change.IImportLixinService"/>-->
+
+    <!--&lt;!&ndash;玩家vip设置dubbo服务&ndash;&gt;-->
+    <!--<dubbo:service ref="playerVipSetService" interface="so.wwb.lotterybox.iservice.merchant.user.IPlayerVipSetService"/>-->
+    <!--&lt;!&ndash;用户备注dubbo服务&ndash;&gt;-->
+    <!--<dubbo:service ref="userRemarkService" interface="so.wwb.lotterybox.iservice.merchant.user.IUserRemarkService"/>-->
+    <!-- 站点分组dubbo服务 -->
+    <!--<dubbo:service ref="sysSiteGroupService" interface="so.wwb.lotterybox.iservice.manager.sys.ISysSiteGroupService"/>-->
+
+    <!--<dubbo:service ref="vPlayerTeamService" interface="so.wwb.lotterybox.iservice.merchant.user.IVPlayerTeamService"/>-->
+
+    <!--//endregion your codes 1-->
+
+</beans>

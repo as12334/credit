@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>web</artifactId>
-        <groupId>so.wwb.openbox</groupId>
+        <groupId>so.wwb.lotterybox</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -42,26 +42,26 @@
         </dependency>
 
         <dependency>
-            <groupId>so.wwb.openbox</groupId>
+            <groupId>so.wwb.lotterybox</groupId>
             <artifactId>model</artifactId>
-            <version>${openbox.version}</version>
+            <version>${lotterybox.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>so.wwb.openbox</groupId>
+            <groupId>so.wwb.lotterybox</groupId>
             <artifactId>iservice</artifactId>
-            <version>${openbox.version}</version>
+            <version>${lotterybox.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>so.wwb.openbox</groupId>
+            <groupId>so.wwb.lotterybox</groupId>
             <artifactId>service</artifactId>
-            <version>${openbox.version}</version>
+            <version>${lotterybox.version}</version>
         </dependency>
         <dependency>
-            <groupId>so.wwb.openbox</groupId>
+            <groupId>so.wwb.lotterybox</groupId>
             <artifactId>common</artifactId>
-            <version>${openbox.version}</version>
+            <version>${lotterybox.version}</version>
         </dependency>
 
         <dependency>
