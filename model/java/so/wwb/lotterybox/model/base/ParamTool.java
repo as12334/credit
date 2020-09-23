@@ -6,7 +6,10 @@ import org.soul.commons.log.Log;
 import org.soul.commons.log.LogFactory;
 import org.soul.commons.param.IParamEnum;
 import org.soul.model.sys.po.SysParam;
+import so.wwb.lotterybox.model.enums.base.BossParamEnum;
 import so.wwb.lotterybox.model.enums.base.SiteParamEnum;
+
+import java.util.Collection;
 
 public class ParamTool extends ParamToolBase {
     private static final Log LOG = LogFactory.getLog(ParamTool.class);
@@ -63,18 +66,18 @@ public class ParamTool extends ParamToolBase {
         return sysParam;
     }
 
-//    /**
-//     * 获取当前站点参数
-//     */
-//    public static Collection<SysParam> getSysParams(SiteParamEnum paramEnum) {
-//        Integer siteId = CommonContext.get().getSiteId();
-//        checkSiteSiteID(siteId, paramEnum);
-//        Collection<SysParam> sysParams = rawByType(siteId, paramEnum);
-//        if (sysParams.isEmpty()) {
-//            LOG.error("Site 获取SysParam缓存为空{0},siteId{1}", paramEnum, siteId);
-//        }
-//        return sysParams;
-//    }
+    /**
+     * 获取当前站点参数
+     */
+    public static Collection<SysParam> getSysParams(SiteParamEnum paramEnum) {
+        Integer siteId = CommonContext.get().getSiteId();
+        checkSiteSiteID(siteId, paramEnum);
+        Collection<SysParam> sysParams = rawByType(siteId, paramEnum);
+        if (sysParams.isEmpty()) {
+            LOG.error("Site 获取SysParam缓存为空{0},siteId{1}", paramEnum, siteId);
+        }
+        return sysParams;
+    }
 
 //    /**
 //     * 获取是否支持现金取款方式
@@ -96,18 +99,18 @@ public class ParamTool extends ParamToolBase {
 //        return sysParam;
 //    }
 
-//    /**
-//     * 获取当前站点参数
-//     */
-//    public static SysParam getSysParam(SiteParamEnum paramEnum) {
-//        Integer siteId = CommonContext.get().getSiteId();
-//        checkCompanySiteID(siteId, paramEnum);
-//        SysParam sysParam = raw(siteId, paramEnum);
-//        if (sysParam == null) {
-//            LOG.error("获取Company SysParam缓存为空{0},siteId{1}", paramEnum, siteId);
-//        }
-//        return sysParam;
-//    }
+    /**
+     * 获取当前站点参数
+     */
+    public static SysParam getSysParam(SiteParamEnum paramEnum) {
+        Integer siteId = CommonContext.get().getSiteId();
+        checkCompanySiteID(siteId, paramEnum);
+        SysParam sysParam = raw(siteId, paramEnum);
+        if (sysParam == null) {
+            LOG.error("获取Company SysParam缓存为空{0},siteId{1}", paramEnum, siteId);
+        }
+        return sysParam;
+    }
 //
 //    /**
 //     * 获取当前站点参数
@@ -120,16 +123,16 @@ public class ParamTool extends ParamToolBase {
 //        return sysParams;
 //    }
 //
-//    /**
-//     * 获取当前站点参数
-//     */
-//    public static SysParam getSysParam(BossParamEnum paramEnum) {
-//        SysParam sysParam = raw(BOSS_SITE_ID, paramEnum);
-//        if (sysParam == null) {
-//            LOG.error("获取BossSysParam缓存为空{0},siteId{1}", paramEnum, BOSS_SITE_ID);
-//        }
-//        return sysParam;
-//    }
+    /**
+     * 获取当前站点参数
+     */
+    public static SysParam getSysParam(BossParamEnum paramEnum) {
+        SysParam sysParam = raw(BOSS_SITE_ID, paramEnum);
+        if (sysParam == null) {
+            LOG.error("获取BossSysParam缓存为空{0},siteId{1}", paramEnum, BOSS_SITE_ID);
+        }
+        return sysParam;
+    }
 
 //    /**
 //     * 刷新当前站点参数

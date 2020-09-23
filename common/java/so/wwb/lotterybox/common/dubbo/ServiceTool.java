@@ -1,7 +1,18 @@
 package so.wwb.lotterybox.common.dubbo;
 
 import org.soul.commons.dubbo.DubboTool;
+import org.soul.iservice.log.audit.IAuditService;
+import org.soul.iservice.passport.IPassportService;
+import org.soul.iservice.security.privilege.ISysResourceService;
+import org.soul.iservice.security.privilege.ISysUserService;
+import org.soul.iservice.sys.ISysAuditLogService;
+import org.soul.iservice.sys.ISysParamService;
 import org.soul.iservice.test.IDbValidService;
+import so.wwb.lotterybox.iservice.common.IDefenseRecordService;
+import so.wwb.lotterybox.iservice.manager.sys.ISysSiteService;
+import so.wwb.lotterybox.iservice.manager.sys.IVSysSiteDomainService;
+import so.wwb.lotterybox.iservice.manager.sys.IVSysSiteManageService;
+import so.wwb.lotterybox.iservice.manager.user.ISysUserExtendService;
 
 public class ServiceTool {
     private static String dubboApplicationName;
@@ -49,15 +60,15 @@ public class ServiceTool {
 //        return getService(IVPlayerOnlineService.class);
 //    }
 //
-//    public static ISysResourceService sysResourceService(){return getService(ISysResourceService.class);}
+    public static ISysResourceService sysResourceService(){return getService(ISysResourceService.class);}
 //
-//    public static IVSysSiteManageService vSysSiteManageService(){return getService(IVSysSiteManageService.class);}
+    public static IVSysSiteManageService vSysSiteManageService(){return getService(IVSysSiteManageService.class);}
 //
-//    public static IDefenseRecordService defenseRecordService(){return getService(IDefenseRecordService.class);}
+    public static IDefenseRecordService defenseRecordService(){return getService(IDefenseRecordService.class);}
 //
 //    public static IIpDbService ipDbService(){return getService(IIpDbService.class);}
 //
-//    public static IVSysSiteDomainService vSysSiteDomainService(){return getService(IVSysSiteDomainService.class);}
+    public static IVSysSiteDomainService vSysSiteDomainService(){return getService(IVSysSiteDomainService.class);}
 //
 //    public static IContentCarouselService contentCarouselService() {
 //        return getService(IContentCarouselService.class);
@@ -71,29 +82,29 @@ public class ServiceTool {
 //        return getService(ICompanyUserService.class);
 //    }
 //
-//    public static ISysParamService sysParamService() {
-//        return getService(ISysParamService.class);
-//    }
+    public static ISysParamService sysParamService() {
+        return getService(ISysParamService.class);
+    }
 //
-//    public static ISysUserService sysUserService() {
-//        return getService(ISysUserService.class);
-//    }
+    public static ISysUserService sysUserService() {
+        return getService(ISysUserService.class);
+    }
+
+    public static ISysUserExtendService sysUserExtendService() {
+        return getService(ISysUserExtendService.class);
+    }
 //
-//    public static ISysUserExtendService sysUserExtendService() {
-//        return getService(ISysUserExtendService.class);
-//    }
-//
-//    public static ISysSiteService sysSiteService() {
-//        return getService(ISysSiteService.class);
-//    }
+    public static ISysSiteService sysSiteService() {
+        return getService(ISysSiteService.class);
+    }
 //
 //    public static ILotteryBetOrderService lotteryBetOrderService() {
 //        return getService(ILotteryBetOrderService.class);
 //    }
 //
-//    public static IPassportService passportService() {
-//        return getService(IPassportService.class);
-//    }
+    public static IPassportService passportService() {
+        return getService(IPassportService.class);
+    }
 //
 //    public static IOauthClientService oauthClientService() {
 //        return getService(IOauthClientService.class);
@@ -153,13 +164,13 @@ public class ServiceTool {
 //        return getService(ILotteryBetService.class);
 //    }
 //
-//    public static IAuditService auditService() {
-//        return getService(IAuditService.class);
-//    }
+    public static IAuditService auditService() {
+        return getService(IAuditService.class);
+    }
 //
-//    public static ISysAuditLogService sysAuditLogService() {
-//        return getService(ISysAuditLogService.class);
-//    }
+    public static ISysAuditLogService sysAuditLogService() {
+        return getService(ISysAuditLogService.class);
+    }
 //
 //    public static ITaskScheduleServiceExGs taskScheduleServiceExGs() {
 //        return getService(ITaskScheduleServiceExGs.class);

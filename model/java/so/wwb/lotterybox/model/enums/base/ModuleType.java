@@ -5,9 +5,9 @@ import org.soul.commons.support.IModuleType;
 public enum ModuleType implements IModuleType {
 
     //登录-登出 1-50存merchant (1,2,3。manager,merchant共用)
-//    PASSPORT_LOGIN("1", "通行证(登录)"),
-//    PASSPORT_LOGOUT("2", "通行证(退出)"),
-//    PASSPORT_LOGIN_FAIL("3", "通行证(登录失败)"),
+    PASSPORT_LOGIN("1", "通行证(登录)"),
+    PASSPORT_LOGOUT("2", "通行证(退出)"),
+    PASSPORT_LOGIN_FAIL("3", "通行证(登录失败)"),
 //    //以下类型日志存在merchant中
 //    PLAYER_PASSWORD_UPDATE("4","修改登录密码"),
 //    PLAYER_REALNAME_UPDATE("5","修改真实姓名"),

@@ -11,6 +11,7 @@ import org.soul.web.session.SessionManagerBase;
 import so.wwb.lotterybox.model.constants.cache.CacheKey;
 import so.wwb.lotterybox.model.enums.base.SiteI18nEnum;
 import so.wwb.lotterybox.model.manager.site.po.*;
+import so.wwb.lotterybox.model.manager.sys.po.SysSite;
 import so.wwb.lotterybox.model.manager.sys.po.VSysSiteDomain;
 import so.wwb.lotterybox.model.manager.sys.po.VSysSiteUser;
 import so.wwb.lotterybox.model.manager.user.po.SysUserExtend;
@@ -34,7 +35,10 @@ public class CacheBase {
         return cacheTool;
     }
 
-
+    public static TimeZone getTimezoneByGmt(String gmtZone) {
+        TimeZone timeZone = TimeZone.getTimeZone(gmtZone);
+        return timeZone;
+    }
     public static void refreshSiteConfineArea() {
         getProxy().refresh(CacheKey.getCacheKey(CacheKey.CACHE_KEY_SITE_CONFINE_AREA, SessionManagerBase.getSiteIdString()));
     }
@@ -165,25 +169,25 @@ public class CacheBase {
 //        return getProxy().get(CacheKey.getCacheKey(CacheKey.CACHE_KEY_SITE_OPERATE_AREA, siteId.toString()));
 //    }
 //
-//    public static Map<String, VSysSiteDomain> getSiteDomain() {
-//        if (siteDomainMap == null || lastAccess == null || (System.currentTimeMillis() - lastAccess.getTime()) > 60000L) {
-//            lastAccess = new Date();
-//            siteDomainMap = getProxy().get(CacheKey.CACHE_KEY_DOMAIN);
-//        }
-//        return siteDomainMap;
-//    }
-//
+    public static Map<String, VSysSiteDomain> getSiteDomain() {
+        if (siteDomainMap == null || lastAccess == null || (System.currentTimeMillis() - lastAccess.getTime()) > 60000L) {
+            lastAccess = new Date();
+            siteDomainMap = getProxy().get(CacheKey.CACHE_KEY_DOMAIN);
+        }
+        return siteDomainMap;
+    }
+
 //
 //    public static TimeZone getTimezoneByGmt(String gmtZone) {
 //        TimeZone timeZone = TimeZone.getTimeZone(gmtZone);
 //        return timeZone;
 //    }
 //
-//    /** 站点信息 */
-//    public static Map<String, SysSite> getSysSite() {
-//        Map<String, SysSite> sysSiteMap = getProxy().get(CacheKey.getCacheKey(CacheKey.CACHE_KEY_SYS_SITE));
-//        return sysSiteMap;
-//    }
+    /** 站点信息 */
+    public static Map<String, SysSite> getSysSite() {
+        Map<String, SysSite> sysSiteMap = getProxy().get(CacheKey.getCacheKey(CacheKey.CACHE_KEY_SYS_SITE));
+        return sysSiteMap;
+    }
 //
 //    /** 根据站点ID获取站点信息 */
 //    public static SysSite getSiteById(Integer siteId) {
