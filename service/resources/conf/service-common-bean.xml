@@ -23,7 +23,7 @@
     <bean id="sysDomainService" class="so.wwb.lotterybox.service.manager.sys.SysDomainService"/>
     <!--<bean id="sysExportService" class="so.wwb.lotterybox.service.manager.sys.SysExportService"/>-->
 
-    <!--<bean id="vSysSiteDomainService" class="so.wwb.lotterybox.service.manager.sys.VSysSiteDomainService"/>-->
+    <bean id="vSysSiteDomainService" class="so.wwb.lotterybox.service.manager.sys.VSysSiteDomainService"/>
     <!--<bean id="vSysSiteUserService" class="so.wwb.lotterybox.service.manager.sys.VSysSiteUserService" />-->
     <bean id="vSysDomainService" class="so.wwb.lotterybox.service.manager.sys.VSysDomainService"/>
     <bean id="vSubAccountService" class="so.wwb.lotterybox.service.manager.user.VSubAccountService"/>

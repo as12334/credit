@@ -45,7 +45,7 @@
 		<!--<property name="ipOrAreaResolver" ref="ipOrAreaResolver"></property>-->
 	</bean>
 
-	<!--<bean id="ipOrAreaResolver" class="so.wwb.lotterybox.web.filter.IpOrAreaResolver"/>-->
+	<bean id="ipOrAreaResolver" class="so.wwb.lotterybox.web.filter.IpOrAreaResolver"/>
 
 	<!--验证码生成-->
 	<bean id="captcha" class="org.soul.web.shiro.common.filter.CaptchaFilter">
@@ -89,7 +89,7 @@
 		</property>
 	</bean>
 
-	<!--<bean id="supportLocale" class="so.wwb.lotterybox.web.tools.SupportLocale"></bean>-->
+	<bean id="supportLocale" class="so.wwb.lotterybox.web.tools.SupportLocale"></bean>
 
 	<!--shiro拦截器-->
 	<bean id="subjectIntercepter" class="so.wwb.lotterybox.web.filter.intercepter.SubjectIntercepter">
@@ -115,13 +115,13 @@
 	<!--域名缓存获取者-->
 	<bean id="domainCacheResolver" class="so.wwb.lotterybox.web.filter.DomainCacheResolver"/>
 
-	<!--&lt;!&ndash;IP过滤器ForPlayer&ndash;&gt;-->
-	<!--<bean id="ipFilterPlayer" class="org.soul.web.filter.IpFilter">-->
-		<!--<property name="ipOrAreaResolver" ref="ipOrAreaResolver"/>-->
-		<!--<property name="ignoreIpChange" value="false"/>-->
-		<!--&lt;!&ndash;IP限制忽略： 	1) 站点公共错误 2）站长买分请求 3）支付回调&ndash;&gt;-->
-		<!--<property name="ignoreUrlPatten" value="(/commonPage/error.html|/creditPay/.*|/onlinePay/.*)"/>-->
-	<!--</bean>-->
+	<!--IP过滤器ForPlayer-->
+	<bean id="ipFilterPlayer" class="org.soul.web.filter.IpFilter">
+		<property name="ipOrAreaResolver" ref="ipOrAreaResolver"/>
+		<property name="ignoreIpChange" value="false"/>
+		<!--IP限制忽略： 	1) 站点公共错误 2）站长买分请求 3）支付回调-->
+		<property name="ignoreUrlPatten" value="(/commonPage/error.html|/creditPay/.*|/onlinePay/.*)"/>
+	</bean>
 
 	<!--<bean id="ipFilterCenter" class="org.soul.web.filter.IpFilter">-->
 		<!--<property name="ipOrAreaResolver" ref="ipOrAreaResolver"/>-->

@@ -114,7 +114,7 @@
     <!--<dubbo:service ref="taskRunRecordService" interface="so.wwb.lotterybox.iservice.manager.taskschedule.ITaskRunRecordService" registry="zookeeperService"/>-->
 
     <!--站点域名-->
-    <!--<dubbo:service ref="vSysSiteDomainService" interface="so.wwb.lotterybox.iservice.manager.sys.IVSysSiteDomainService" registry="zookeeperService"/>-->
+    <dubbo:service ref="vSysSiteDomainService" interface="so.wwb.lotterybox.iservice.manager.sys.IVSysSiteDomainService" registry="zookeeperService"/>
 
     <!--&lt;!&ndash;账号权限&ndash;&gt;-->
     <!--<dubbo:service ref="sysRoleService" interface="org.soul.iservice.security.privilege.ISysRoleService"/>-->

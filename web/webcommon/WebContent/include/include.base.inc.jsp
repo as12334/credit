@@ -35,7 +35,7 @@
 <c:set var="resRoot" value='<%= MessageFormat.format(ConfigBase.get().getResRoot(),request.getServerName()) %>' />
 <c:set var="fileRoot" value='<%= MessageFormat.format(ConfigBase.get().getFileRoot(),request.getServerName()) %>' />
 <c:set var="imgRoot" value='<%= MessageFormat.format(ConfigBase.get().getImgRoot(),request.getServerName()) %>' />
-<c:set var="wsRoot" value='<%= MessageFormat.format(ConfigBase.get().getWsRoot(),SessionManagerCommon.getSubsysCode()) %>' />
+<%--<c:set var="wsRoot" value='<%= MessageFormat.format(ConfigBase.get().getWsRoot(),SessionManagerCommon.getSubsysCode()) %>' />--%>
 
 <c:set var="themePath" value="${resRoot}/theme/${terminalPath}/${theme}" />
 <c:set var="staticPath" value="${resRoot}/static" />

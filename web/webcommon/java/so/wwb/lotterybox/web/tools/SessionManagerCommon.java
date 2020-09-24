@@ -237,7 +237,7 @@ public class SessionManagerCommon extends SessionManagerBase {
 //
 //    //get site domain name
     public static String getSiteDomainName(HttpServletRequest request) {
-        return getSiteDomain(request).getName();
+        return "manager";
     }
 
     public static String getSiteDomainTilte(HttpServletRequest request){
@@ -252,23 +252,23 @@ public class SessionManagerCommon extends SessionManagerBase {
         return Cache.getSiteDomain().get(DomainTool.getDomain(request));
     }
 //
-//    /**
-//     * 获取站点最新的Logo
-//     *
-//     * @return
-//     */
-//    public static String getLogo() {
-//        Collection<SysSite> values = Cache.getSysSite().values();
-//        String siteLogoUrl = "";
-//        if (CollectionTool.isNotEmpty(values)){
-//            for (SysSite site : values){
-//                if (site.getId().equals(getSiteId())){
-//                    siteLogoUrl = site.getLogoPath();
-//                }
-//            }
-//        }
-//        return siteLogoUrl;
-//    }
+    /**
+     * 获取站点最新的Logo
+     *
+     * @return
+     */
+    public static String getLogo() {
+        Collection<SysSite> values = Cache.getSysSite().values();
+        String siteLogoUrl = "";
+        if (CollectionTool.isNotEmpty(values)){
+            for (SysSite site : values){
+                if (site.getId().equals(getSiteId())){
+                    siteLogoUrl = site.getLogoPath();
+                }
+            }
+        }
+        return siteLogoUrl;
+    }
 //
 //    public static String getFlashLogo() {
 //        //return Cache.getSiteFlashLogoUrl(getSiteId());

@@ -47,14 +47,14 @@
             <bean class="so.wwb.lotterybox.web.interceptor.AuditLogInterceptor" />
         </mvc:interceptor>
 
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean class="so.wwb.lotterybox.web.tools.token.TokenInterceptor"/>
-        </mvc:interceptor>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean class="so.wwb.lotterybox.web.tools.token.TokenValidInterceptor"/>
-        </mvc:interceptor>
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="so.wwb.lotterybox.web.tools.token.TokenInterceptor"/>-->
+        <!--</mvc:interceptor>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="so.wwb.lotterybox.web.tools.token.TokenValidInterceptor"/>-->
+        <!--</mvc:interceptor>-->
 
     </mvc:interceptors>
 
