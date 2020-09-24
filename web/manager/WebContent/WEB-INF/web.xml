@@ -77,7 +77,7 @@
     </filter-mapping>
     <!-- file suffix filter end -->
 
-    <!--&lt;!&ndash; character encoding filter start &ndash;&gt;-->
+    <!-- character encoding filter start -->
     <filter>
         <filter-name>characterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -98,22 +98,61 @@
     <!-- character encoding filter end -->
 
     <!--domain filter start -->
+    <!--<filter>-->
+        <!--<filter-name>appLineFilter</filter-name>-->
+        <!--<filter-class>so.wwb.lotterybox.manager.filter.AppLineFilter</filter-class>-->
+        <!--<async-supported>true</async-supported>-->
+        <!--<init-param>-->
+            <!--<param-name>encoding</param-name>-->
+            <!--<param-value>UTF-8</param-value>-->
+        <!--</init-param>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>appLineFilter</filter-name>-->
+        <!--<url-pattern>/app/line.html</url-pattern>-->
+    <!--</filter-mapping>-->
 
+    <!--<filter>-->
+        <!--<filter-name>SaveSiteServerIpFilter</filter-name>-->
+        <!--<filter-class>so.wwb.lotterybox.manager.filter.SaveSiteServerIpFilter</filter-class>-->
+        <!--<async-supported>true</async-supported>-->
+        <!--<init-param>-->
+            <!--<param-name>encoding</param-name>-->
+            <!--<param-value>UTF-8</param-value>-->
+        <!--</init-param>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>SaveSiteServerIpFilter</filter-name>-->
+        <!--<url-pattern>/tool/save-site-server-ip.html</url-pattern>-->
+    <!--</filter-mapping>-->
 
-    <filter>
-        <filter-name>GetDomainFilter</filter-name>
-        <filter-class>so.wwb.lotterybox.manager.filter.GetDomainFilter</filter-class>
-        <async-supported>true</async-supported>
-        <init-param>
-            <param-name>encoding</param-name>
-            <param-value>UTF-8</param-value>
-        </init-param>
-    </filter>
-    <filter-mapping>
-        <filter-name>GetDomainFilter</filter-name>
-        <url-pattern>/tool/get-domains.html</url-pattern>
-    </filter-mapping>
+    <!--<filter>-->
+        <!--<filter-name>GetDomainFilter</filter-name>-->
+        <!--<filter-class>so.wwb.lotterybox.manager.filter.GetDomainFilter</filter-class>-->
+        <!--<async-supported>true</async-supported>-->
+        <!--<init-param>-->
+            <!--<param-name>encoding</param-name>-->
+            <!--<param-value>UTF-8</param-value>-->
+        <!--</init-param>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>GetDomainFilter</filter-name>-->
+        <!--<url-pattern>/tool/get-domains.html</url-pattern>-->
+    <!--</filter-mapping>-->
 
+    <!--<filter>-->
+        <!--<filter-name>GetSitesFilter</filter-name>-->
+        <!--<filter-class>so.wwb.lotterybox.manager.filter.GetSitesFilter</filter-class>-->
+        <!--<async-supported>true</async-supported>-->
+        <!--<init-param>-->
+            <!--<param-name>encoding</param-name>-->
+            <!--<param-value>UTF-8</param-value>-->
+        <!--</init-param>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>GetSitesFilter</filter-name>-->
+        <!--<url-pattern>/tool/get-sites.html</url-pattern>-->
+    <!--</filter-mapping>-->
 
     <filter>
         <filter-name>CheckDomainIpFilter</filter-name>
@@ -153,9 +192,9 @@
         <filter-name>illegalCharacterFilter</filter-name>
         <url-pattern>*.html</url-pattern>
     </filter-mapping>
-    <!--&lt;!&ndash;illegal character filer end&ndash;&gt;-->
+    <!--illegal character filer end-->
 
-    <!--&lt;!&ndash;illegal word filter start &ndash;&gt;-->
+    <!--illegal word filter start -->
     <filter>
         <filter-name>illegalWordFilter</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -165,9 +204,9 @@
         <filter-name>illegalWordFilter</filter-name>
         <url-pattern>*.html</url-pattern>
     </filter-mapping>
-    <!--&lt;!&ndash;illegal word filter end &ndash;&gt;-->
+    <!--illegal word filter end -->
 
-    <!--&lt;!&ndash;shiro filter&ndash;&gt;-->
+    <!--shiro filter-->
     <filter>
         <filter-name>shiroFilter</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>

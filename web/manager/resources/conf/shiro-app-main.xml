@@ -50,11 +50,10 @@
 				/resource/** = anon
 				/template/email/** = anon
 				/errors/** = anon
-				<!--/message_*.js = ip-->
-				<!--/index/language.html = ip-->
-				<!--/index/language/change.html = ip-->
-				<!--/forgetPassword/** = ip-->
-				<!--/app/** = ip-->
+				/message_*.js = ip
+				/index/language.html = ip
+				/index/language/change.html = ip
+				/forgetPassword/** = ip
 				/captcha/*.html = captcha
 				/passport/login.html = subsys,login
 				/** = kickout,authc,autho

@@ -76,53 +76,53 @@
 		<!--</property>-->
 	<!--</bean>-->
 
-	<!--&lt;!&ndash; 站点限制地区缓存 &ndash;&gt;-->
-	<!--<util:constant id="CACHE_KEY_SITE_CONFINE_AREA"  static-field="so.wwb.lotterybox.constants.cache.CacheKey.CACHE_KEY_SITE_CONFINE_AREA"/>-->
-	<!--<bean id="siteConfineAreaCache" class="org.soul.commons.cache.core.CacheItemConf">-->
-		<!--<property name="dataProviderClass" value="so.wwb.lotterybox.iservice.manager.common.ISiteConfineAreaService"/>-->
-		<!--<property name="dubboVersionApp" value="${service.dubbo.application.name}"/>-->
-		<!--<property name="dataProviderMethod" value="load"/>-->
-		<!--<property name="cacheLoadStrategy" ref="FIRST_TIME"/>-->
-		<!--<property name="cacheProviderType" ref="siteJedisPorxy"/>-->
-		<!--<property name="expire" value="3600"/>-->
-		<!--<property name="methodArgs">-->
-			<!--<list>-->
-				<!--<bean class="so.wwb.lotterybox.manager.site.vo.SiteConfineAreaVo"/>-->
-			<!--</list>-->
-		<!--</property>-->
-	<!--</bean>-->
+	<!-- 站点限制地区缓存 -->
+	<util:constant id="CACHE_KEY_SITE_CONFINE_AREA"  static-field="so.wwb.lotterybox.model.constants.cache.CacheKey.CACHE_KEY_SITE_CONFINE_AREA"/>
+	<bean id="siteConfineAreaCache" class="org.soul.commons.cache.core.CacheItemConf">
+		<property name="dataProviderClass" value="so.wwb.lotterybox.iservice.manager.common.ISiteConfineAreaService"/>
+		<property name="dubboVersionApp" value="${service.dubbo.application.name}"/>
+		<property name="dataProviderMethod" value="load"/>
+		<property name="cacheLoadStrategy" ref="FIRST_TIME"/>
+		<property name="cacheProviderType" ref="siteJedisPorxy"/>
+		<property name="expire" value="3600"/>
+		<property name="methodArgs">
+			<list>
+				<bean class="so.wwb.lotterybox.model.manager.site.vo.SiteConfineAreaVo"/>
+			</list>
+		</property>
+	</bean>
 
-	<!--&lt;!&ndash; 站点限制IP缓存 &ndash;&gt;-->
-	<!--<util:constant id="CACHE_KEY_SITE_CONFINE_IP"  static-field="so.wwb.lotterybox.constants.cache.CacheKey.CACHE_KEY_SITE_CONFINE_IP"/>-->
-	<!--<bean id="siteConfineIpCache" class="org.soul.commons.cache.core.CacheItemConf">-->
-		<!--<property name="dataProviderClass" value="so.wwb.lotterybox.iservice.manager.common.ISiteConfineIpService"/>-->
-		<!--<property name="dubboVersionApp" value="${service.dubbo.application.name}"/>-->
-		<!--<property name="dataProviderMethod" value="load"/>-->
-		<!--<property name="cacheLoadStrategy" ref="FIRST_TIME"/>-->
-		<!--<property name="cacheProviderType" ref="siteJedisPorxy"/>-->
-		<!--<property name="expire" value="3600"/>-->
-		<!--<property name="methodArgs">-->
-			<!--<list>-->
-				<!--<bean class="so.wwb.lotterybox.manager.site.vo.SiteConfineIpVo"/>-->
-			<!--</list>-->
-		<!--</property>-->
-	<!--</bean>-->
+	<!-- 站点限制IP缓存 -->
+	<util:constant id="CACHE_KEY_SITE_CONFINE_IP"  static-field="so.wwb.lotterybox.model.constants.cache.CacheKey.CACHE_KEY_SITE_CONFINE_IP"/>
+	<bean id="siteConfineIpCache" class="org.soul.commons.cache.core.CacheItemConf">
+		<property name="dataProviderClass" value="so.wwb.lotterybox.iservice.manager.common.ISiteConfineIpService"/>
+		<property name="dubboVersionApp" value="${service.dubbo.application.name}"/>
+		<property name="dataProviderMethod" value="load"/>
+		<property name="cacheLoadStrategy" ref="FIRST_TIME"/>
+		<property name="cacheProviderType" ref="siteJedisPorxy"/>
+		<property name="expire" value="3600"/>
+		<property name="methodArgs">
+			<list>
+				<bean class="so.wwb.lotterybox.model.manager.site.vo.SiteConfineIpVo"/>
+			</list>
+		</property>
+	</bean>
 
-	<!--&lt;!&ndash; 中国大陆ip段缓存 &ndash;&gt;-->
-	<!--<util:constant id="CACHE_KEY_IP_DB" static-field="so.wwb.lotterybox.constants.cache.CacheKey.CACHE_KEY_IP_DB"/>-->
-	<!--<bean id="ipDbCache" class="org.soul.commons.cache.core.CacheItemConf">-->
-		<!--<property name="dataProviderClass" value="so.wwb.lotterybox.iservice.manager.common.IIpDbService"/>-->
-		<!--<property name="dubboVersionApp" value="${service.dubbo.application.name}"/>-->
-		<!--<property name="dataProviderMethod" value="load"/>-->
-		<!--<property name="cacheLoadStrategy" ref="FIRST_TIME"/>-->
-		<!--<property name="cacheProviderType" ref="jedisProxy"/>-->
-		<!--<property name="expire" value="3600"/>-->
-		<!--<property name="methodArgs">-->
-			<!--<list>-->
-				<!--<bean class="so.wwb.lotterybox.manager.sys.ip.vo.IpDbListVo"/>-->
-			<!--</list>-->
-		<!--</property>-->
-	<!--</bean>-->
+	<!-- 中国大陆ip段缓存 -->
+	<util:constant id="CACHE_KEY_IP_DB" static-field="so.wwb.lotterybox.model.constants.cache.CacheKey.CACHE_KEY_IP_DB"/>
+	<bean id="ipDbCache" class="org.soul.commons.cache.core.CacheItemConf">
+		<property name="dataProviderClass" value="so.wwb.lotterybox.iservice.manager.common.IIpDbService"/>
+		<property name="dubboVersionApp" value="${service.dubbo.application.name}"/>
+		<property name="dataProviderMethod" value="load"/>
+		<property name="cacheLoadStrategy" ref="FIRST_TIME"/>
+		<property name="cacheProviderType" ref="jedisProxy"/>
+		<property name="expire" value="3600"/>
+		<property name="methodArgs">
+			<list>
+				<bean class="so.wwb.lotterybox.model.manager.sys.ip.vo.IpDbListVo"/>
+			</list>
+		</property>
+	</bean>
 
 	<!--&lt;!&ndash; 站点语言缓存 &ndash;&gt;-->
 	<!--<util:constant id="CACHE_KEY_SITE_LANGUAGE"  static-field="so.wwb.lotterybox.constants.cache.CacheKey.CACHE_KEY_SITE_LANGUAGE"/>-->
@@ -193,14 +193,14 @@
 				<!--<entry key-ref="CACHE_KEY_DOMAIN_SITE">-->
 					<!--<ref bean="domainSiteCache"/>-->
 				<!--</entry>-->
-				<!--&lt;!&ndash; 站点限制地区缓存 &ndash;&gt;-->
-				<!--<entry key-ref="CACHE_KEY_SITE_CONFINE_AREA" >-->
-					<!--<ref bean="siteConfineAreaCache"/>-->
-				<!--</entry>-->
-				<!--&lt;!&ndash; 站点限制IP缓存 &ndash;&gt;-->
-				<!--<entry key-ref="CACHE_KEY_SITE_CONFINE_IP">-->
-					<!--<ref bean="siteConfineIpCache"/>-->
-				<!--</entry>-->
+				<!-- 站点限制地区缓存 -->
+				<entry key-ref="CACHE_KEY_SITE_CONFINE_AREA" >
+					<ref bean="siteConfineAreaCache"/>
+				</entry>
+				<!-- 站点限制IP缓存 -->
+				<entry key-ref="CACHE_KEY_SITE_CONFINE_IP">
+					<ref bean="siteConfineIpCache"/>
+				</entry>
 				<!--&lt;!&ndash;语言&ndash;&gt;-->
 				<!--<entry key-ref="CACHE_KEY_SITE_LANGUAGE" >-->
 					<!--<ref bean="siteLanguageCache"/>-->

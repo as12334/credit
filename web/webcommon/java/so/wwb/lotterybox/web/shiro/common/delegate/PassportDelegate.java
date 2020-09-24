@@ -51,8 +51,8 @@ public class PassportDelegate implements IPassportDelegate {
     private String subsysCode;
     @Autowired
     private RedisSessionDao redisSessionDao;
-//    @Autowired
-//    private IIpOrAreaResolver ipOrAreaResolver;
+    @Autowired
+    private IIpOrAreaResolver ipOrAreaResolver;
 
 
     private String ssoNormal = "/passport/login.html";
@@ -166,11 +166,11 @@ public class PassportDelegate implements IPassportDelegate {
         user.setLoginIp(clientInfo.getIp());
         user.setLastLoginIp(user.getLoginIp());
         //避免登录时,未获取ip信息
-//        if(SessionManagerBase.getIpDb() == null){
-//            String ipStr = IpTool.ipv4LongToString(user.getLoginIp());
-//            IpBean ipdb = ipOrAreaResolver.getIpFormDb(ipStr);
-//            SessionManagerBase.setIpDb(ipdb);
-//        }
+        if(SessionManagerBase.getIpDb() == null){
+            String ipStr = IpTool.ipv4LongToString(user.getLoginIp());
+            IpBean ipdb = ipOrAreaResolver.getIpFormDb(ipStr);
+            SessionManagerBase.setIpDb(ipdb);
+        }
         user.setLoginIpDictCode(SessionManagerBase.getIpDictCode());
         user.setLastLoginIpDictCode(user.getLoginIpDictCode());
         user.setLastLoginTime(now);

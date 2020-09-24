@@ -26,6 +26,9 @@
     <dubbo:service ref="sysSiteService" interface="so.wwb.lotterybox.iservice.manager.sys.ISysSiteService" registry="zookeeperService"/>
 
 
+    <dubbo:service ref="ipDbService" interface="so.wwb.lotterybox.iservice.manager.common.IIpDbService" registry="zookeeperService"/>
+
+
     <!--域名服务-->
     <dubbo:service ref="sysDomainService" interface="so.wwb.lotterybox.iservice.manager.sys.ISysDomainService" registry="zookeeperService"/>
 

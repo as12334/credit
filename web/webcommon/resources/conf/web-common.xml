@@ -123,12 +123,12 @@
 		<property name="ignoreUrlPatten" value="(/commonPage/error.html|/creditPay/.*|/onlinePay/.*)"/>
 	</bean>
 
-	<!--<bean id="ipFilterCenter" class="org.soul.web.filter.IpFilter">-->
-		<!--<property name="ipOrAreaResolver" ref="ipOrAreaResolver"/>-->
-		<!--<property name="ignoreIpChange" value="true"/>-->
-		<!--&lt;!&ndash;IP限制忽略： 	1) 站点公共错误 2）站长买分请求 3）支付回调&ndash;&gt;-->
-		<!--<property name="ignoreUrlPatten" value="(/commonPage/error.html|/creditPay/.*|/onlinePay/.*)"/>-->
-	<!--</bean>-->
+	<bean id="ipFilterCenter" class="org.soul.web.filter.IpFilter">
+		<property name="ipOrAreaResolver" ref="ipOrAreaResolver"/>
+		<property name="ignoreIpChange" value="true"/>
+		<!--IP限制忽略： 	1) 站点公共错误 2）站长买分请求 3）支付回调-->
+		<property name="ignoreUrlPatten" value="(/commonPage/error.html|/creditPay/.*|/onlinePay/.*)"/>
+	</bean>
 
 	<bean id="cipherKeyResolver" class="so.wwb.lotterybox.web.session.CipherKeyResolver">
 		<property name="cipherKey" value="#{T(org.apache.shiro.codec.Base64).decode('bT3ovvD7RfGDc0BXO5ORyA==')}"></property>

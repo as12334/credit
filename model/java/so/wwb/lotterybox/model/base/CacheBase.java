@@ -39,6 +39,15 @@ public class CacheBase {
         TimeZone timeZone = TimeZone.getTimeZone(gmtZone);
         return timeZone;
     }
+
+    public static Map<String, SiteConfineArea> getSiteConfineArea() {
+        return getProxy().get(CacheKey.getCacheKey(CacheKey.CACHE_KEY_SITE_CONFINE_AREA, SessionManagerBase.getSiteIdString()));
+    }
+
+
+    public static Map<String, SiteConfineIp> getSiteConfineIp(Integer siteId) {
+        return getProxy().get(CacheKey.getCacheKey(CacheKey.CACHE_KEY_SITE_CONFINE_IP, siteId.toString()));
+    }
     public static void refreshSiteConfineArea() {
         getProxy().refresh(CacheKey.getCacheKey(CacheKey.CACHE_KEY_SITE_CONFINE_AREA, SessionManagerBase.getSiteIdString()));
     }

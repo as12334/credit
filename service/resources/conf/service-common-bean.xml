@@ -31,9 +31,9 @@
     <!--<bean id="taskScheduleCrudServiceEx" class="so.wwb.lotterybox.service.manager.taskschedule.TaskScheduleCrudServiceEx" />-->
     <!--<bean id="taskRunRecordService" class="so.wwb.lotterybox.service.manager.taskschedule.TaskRunRecordService"/>-->
     <bean id="customSysParamService" class="so.wwb.lotterybox.service.manager.sys.CustomSysParamService"/>
-    <!--<bean id="ipDbService" class="so.wwb.lotterybox.service.manager.common.IpDbService"/>-->
-    <!--<bean id="siteConfineAreaService" class="so.wwb.lotterybox.service.manager.common.SiteConfineAreaService"/>-->
-    <!--<bean id="siteConfineIpService" class="so.wwb.lotterybox.service.manager.common.SiteConfineIpService"/>-->
+    <bean id="ipDbService" class="so.wwb.lotterybox.service.manager.common.IpDbService"/>
+    <bean id="siteConfineAreaService" class="so.wwb.lotterybox.service.manager.common.SiteConfineAreaService"/>
+    <bean id="siteConfineIpService" class="so.wwb.lotterybox.service.manager.common.SiteConfineIpService"/>
     <!--<bean id="siteI18nService" class="so.wwb.lotterybox.service.manager.common.SiteI18nService"/>-->
     <!--<bean id="siteLanguageService" class="so.wwb.lotterybox.service.manager.common.SiteLanguageService"/>-->
     <!--<bean id="siteOperateAreaService" class="so.wwb.lotterybox.service.manager.common.SiteOperateAreaService"/>-->

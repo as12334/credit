@@ -9,6 +9,7 @@ import org.soul.iservice.sys.ISysAuditLogService;
 import org.soul.iservice.sys.ISysParamService;
 import org.soul.iservice.test.IDbValidService;
 import so.wwb.lotterybox.iservice.common.IDefenseRecordService;
+import so.wwb.lotterybox.iservice.manager.common.IIpDbService;
 import so.wwb.lotterybox.iservice.manager.sys.ISysSiteService;
 import so.wwb.lotterybox.iservice.manager.sys.IVSysSiteDomainService;
 import so.wwb.lotterybox.iservice.manager.sys.IVSysSiteManageService;
@@ -66,7 +67,7 @@ public class ServiceTool {
 //
     public static IDefenseRecordService defenseRecordService(){return getService(IDefenseRecordService.class);}
 //
-//    public static IIpDbService ipDbService(){return getService(IIpDbService.class);}
+    public static IIpDbService ipDbService(){return getService(IIpDbService.class);}
 //
     public static IVSysSiteDomainService vSysSiteDomainService(){return getService(IVSysSiteDomainService.class);}
 //
